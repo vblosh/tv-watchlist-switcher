@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "TradingView Watchlist Switcher (Basic Plan)",
+  "version": "1.0.0",
+  "description": "Manage and switch unlimited local and cloud watchlists on TradingView Basic.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.tradingview.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TV Watchlist Switcher"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.tradingview.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
